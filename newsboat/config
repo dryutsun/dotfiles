@@ -1,0 +1,59 @@
+#----------------------------------------------------------------------
+# file: ~/.newsbeuter/config
+# date: Thursday 04 August 17:07
+# vim:  set ai et fenc=utf-8 ft=conf nu si sts=0 sw=4 ts=8 tw=0 :
+# ----------------------------------------------------------------------
+#
+
+auto-reload yes
+browser google-chrome
+macro m set browser "tsp mpv %u"; open-in-browser ; set browser "firefox %u"
+macro n set browser "w3m %u"; open-in-browser ; set browser "firefox %u""
+cleanup-on-quit yes
+download-path "/home/t3nj1n/Downloads"
+feed-sort-order title-dec
+max-downloads 4
+#notify-always yes
+#notify-format "newsbeuter: %n unread articles within %f unread feeds"
+#notify-program notify-send
+notify-xterm yes
+notify-screen yes
+player mpv
+refresh-on-startup yes
+reload-time 20
+reload-threads 2
+show-read-articles yes
+show-read-feeds no
+
+# hide articles matching: ---------------------------------------------
+
+ignore-article "*" "title =~ \"Sponsor\""
+ignore-article "*" "title =~ \"Advertisement\""
+ignore-mode "display"
+# formatting and colorization ------------------------------------------
+
+articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
+
+highlight feedlist    "^  *[0-9]+  *N  "                    magenta  default
+highlight articlelist "^  *[0-9]+  *N  "                    magenta  default
+
+highlight article     "(^Feed:.*|^Title:.*|^Author:.*)"     red      default
+highlight article     "(^Link:.*|^Date:.*)"                 white    default
+highlight article     "^Podcast Download URL:.*"            cyan     default
+highlight article     "^Links:"                             magenta  black    underline
+highlight article     "https?://[^ ]+"                      green    default
+highlight article     "^(Title):.*$"                        blue     default
+highlight article     "\\[[0-9][0-9]*\\]"                   magenta  default  bold
+highlight article     "\\[image\\ [0-9]+\\]"                green    default  bold
+highlight article     "\\[embedded flash: [0-9][0-9]*\\]"   green    default  bold
+highlight article     ":.*\\(link\\)$"                      cyan     default
+highlight article     ":.*\\(image\\)$"                     blue     default
+highlight article     ":.*\\(embedded flash\\)$"            magenta  default
+
+color background                                            default   default
+color listnormal                                            default   default
+color listfocus                                             magenta   default
+color info                                                  blue      black
+color article                                               default   default
+color listnormal_unread                                     white     default
+color listfocus_unread                                      color255  cyan
