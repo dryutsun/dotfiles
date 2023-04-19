@@ -1,0 +1,13 @@
+{
+	"htdf": {
+		"prefix": "htdf",
+		"description": "Function Recipe",
+		"body": "// @signature\t:\n// @data_def\t:\n// @type\t:\n// @purpose\t:\n"
+	},
+
+	"htdd": {
+		"prefix": "htdd",
+		"description": "Data Recipe",
+		"body": "// @structure\t:\n// @type\t:\n// @interpret\t:\n// @example\t:\n"
+	}
+}
